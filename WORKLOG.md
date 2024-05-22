@@ -1,22 +1,7 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Souvik Basak
 
-### date x
+### 2024-05-22
 
-info
-
-### date y
-
-info
-
-
-## GROUP MEMBER 2
-
-### date x
-
-info
-
-### date y
-
-info
+Created all the class files.
