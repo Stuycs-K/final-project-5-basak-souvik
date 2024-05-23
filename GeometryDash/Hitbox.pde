@@ -9,8 +9,9 @@ public class Hitbox {
   }
   
   public boolean collidesWith(Hitbox other) {
-    return (other.x1() <= x1 && other.x2() >= x1 || other.x1() <= x2 && other.x2() >= x2) && 
-           (other.y1() <= y1 && other.y2() >= y1 || other.y1() <= y2 && other.y2() >= y2);
+    if (other.x2() < x1 || x2 < other.x1() ||
+       (other.y2() < y1 || y2 < other.y1())) return false;
+    return true;
   }
   
   public double x1() {return x1;}
