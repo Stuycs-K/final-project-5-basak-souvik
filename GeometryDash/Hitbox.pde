@@ -8,12 +8,10 @@ public class Hitbox {
     this.y2 = y2;
   }
   
-  
-  
   public boolean collidesWith(Hitbox other) {
-    return 
-    return false;
+    return (other.x1() < x1 && other.x2() > x1 || other.x1() < x1 && other.x1() > x2) && (other.y1() < y1 && other.y2() > y1 || other.y1() < y1 && other.y1() > y2);
   }
+  
   public double x1() {return x1;}
   public double y1() {return y1;}
   public double x2() {return x2;}
