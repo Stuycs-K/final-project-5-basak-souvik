@@ -5,6 +5,6 @@ void setup() {
   Hitbox test4 = new Hitbox(6,6,7,7);
   println(test3.collidesWith(test4));
   size(1000,600);
-  SolidBlock block1 = new SolidBlock(525,15,0,loadImage("sprites/1.png"));
+  SolidBlock block1 = new SolidBlock(525,15,0,1);
   block1.displayObject();
 }

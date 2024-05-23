@@ -5,11 +5,11 @@ public abstract class LevelObject {
   private PImage sprite;
   private Hitbox hitbox;
   
-  public LevelObject(double x, double y, int r, PImage img) {
+  public LevelObject(double x, double y, int r, int imageID) {
     positionX = x;
     positionY = y;
     rotation = r;
-    sprite = img;
+    sprite = loadImage("sprites/" + imageID + ".png");
   }
   
   public void displayObject(){
