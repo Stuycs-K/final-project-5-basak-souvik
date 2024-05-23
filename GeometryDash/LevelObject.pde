@@ -5,16 +5,17 @@ public abstract class LevelObject {
   private PImage sprite;
   private Hitbox hitbox;
   
-  public LevelObject(double x, double y, int r, PImage img, Hitbox box) {
+  public LevelObject(double x, double y, int r, PImage img) {
     positionX = x;
     positionY = y;
     rotation = r;
     sprite = img;
-    hitbox = box;
   }
   
-  public void displayObject(){}
-  public abstract void collideWithPlayer(Player player);
+  public void displayObject(){
+    image(sprite, (float) positionX-15, (float) (height-positionY-15));
+  }
+  //public abstract void collideWithPlayer(Player player);
   
   public double getX() {return positionX;}
   public double getY() {return positionY;}
