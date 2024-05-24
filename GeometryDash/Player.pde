@@ -21,4 +21,6 @@ public class Player {
   public void displayPlayer() {
     image(sprite, 210, (float) (height-positionY));
   }
+  
+  public double getX() {return positionX;}
 }

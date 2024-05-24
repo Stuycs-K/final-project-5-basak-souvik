@@ -7,6 +7,8 @@ void setup() {
   println(test3.collidesWith(test4));
   size(1000,600);
   
+  Level level = new Level(2);
   Player player = new Player(15,15,0,0);
   player.displayPlayer();
+  level.drawMap(player.getX());
 }
