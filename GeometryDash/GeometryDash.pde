@@ -1,5 +1,5 @@
-Level level = new Level(2);
-Player player = new Player(15,15,0,0);
+Level level;
+Player player;
 
 void setup() {
   imageMode(CENTER);
@@ -9,10 +9,13 @@ void setup() {
   //Hitbox test4 = new Hitbox(6,6,7,7);
   //println(test3.collidesWith(test4));
   size(1000,600);
-  
-  
+  level = new Level(2);
+  player = new Player(15,15,0,0);
 }
   
 void draw() {
   background(255);
+  player.displayPlayer();
+  level.drawMap(player.getX());
+  player.setX(player.getX()+3);
 }
