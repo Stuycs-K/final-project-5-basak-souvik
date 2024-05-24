@@ -6,13 +6,19 @@ public class Player {
   private Hitbox smallHitbox;
   private boolean alive;
   private Gamemode gamemode;
+  private PImage sprite;
   
-  public Player (double x, double y, double velociyY, int r, Gamemode gamemode) {
+  public Player (double x, double y, double velociyY, int r) {
     positionX = x;
     positionY = y;
     this.velocityY = velocityY;
     rotation = r;
+    sprite = loadImage("sprites/playerIcon1.png");
     largeHitbox = new Hitbox(x-15, y-15, x+15, y+15);
     smallHitbox = new Hitbox(x-2, y-2, x+2, y+2);
+  }
+  
+  public void displayPlayer() {
+    image(sprite, 210, (float) (height-positionY));
   }
 }

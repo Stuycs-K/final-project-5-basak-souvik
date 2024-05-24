@@ -6,8 +6,7 @@ void setup() {
   Hitbox test4 = new Hitbox(6,6,7,7);
   println(test3.collidesWith(test4));
   size(1000,600);
-  SolidBlock block1 = new SolidBlock(525,15,0,1);
-  SolidBlock block2 = new SolidBlock(555,15,0,1);
-  block1.displayObject();
-  block2.displayObject();
+  
+  Player player = new Player(15,15,0,0);
+  player.displayPlayer();
 }
