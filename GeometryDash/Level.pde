@@ -9,9 +9,13 @@ public class Level {
     objectList[1] = new SolidBlock(555,15,0,1);
   }
   
-  public void drawMap() {
+  public void drawMap(double playerX) {
     for (int i = 0; i < objectList.length; i++) {
-      objectList[i].displayObject();
+      objectList[i].displayObject(playerX);
     }
+  }
+  
+  public void calculateCollisions() {
+    
   }
 }

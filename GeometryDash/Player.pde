@@ -22,5 +22,10 @@ public class Player {
     image(sprite, 210, (float) (height-positionY));
   }
   
-  public double getX() {return positionX;}
+  public double getX() {
+    return positionX;
+  }
+  public void setX(double x) {
+    positionX = x;
+  }
 }
