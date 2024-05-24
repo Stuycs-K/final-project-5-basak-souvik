@@ -22,4 +22,5 @@ public abstract class LevelObject {
   public int getRotation() {return rotation;}
   public PImage getSprite() {return sprite;}
   public Hitbox getHitbox() {return hitbox;}
+  public void setHitbox(Hitbox box) {hitbox = box;}
 }
