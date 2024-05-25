@@ -4,6 +4,7 @@ public class Level {
   private int startIndex = 0;
   
   public Level (int numObjects, Player player) {
+    //later, use level name in constructor
     objectList = new LevelObject[numObjects];
     this.player = player;
     //test

@@ -43,6 +43,9 @@ public class Player {
   public boolean canInput() {
     return canInput;
   }
+  public Gamemode gamemode() {
+    return gamemode;
+  }
   public void addX(double x) {
     positionX += x;
     largeHitbox.addX(x);
@@ -55,5 +58,8 @@ public class Player {
   }
   public void setVelocityY(double vel) {
     velocityY = vel;
+  }
+  public void setAliveState(boolean newState) {
+    alive = newState;
   }
 }
