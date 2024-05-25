@@ -15,7 +15,8 @@ public abstract class LevelObject {
   public void displayObject(double xOffset){
     image(sprite, (float) (positionX-xOffset), (float) (height-positionY));
   }
-  //public abstract void collideWithPlayer(Player player);
+  
+  public abstract void collideWithPlayer(Player player);
   
   public double getX() {
     return positionX;

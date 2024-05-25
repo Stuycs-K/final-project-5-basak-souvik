@@ -10,14 +10,15 @@ void setup() {
   //Hitbox test4 = new Hitbox(6,6,7,7);
   //println(test3.collidesWith(test4));
   size(1000,600);
-  level = new Level(3);
-  player = new Player(15,15,0,0, new Gamemode());
+  player = new Player(225,15,0,0, new Gamemode());
+  level = new Level(3, player);
 }
   
 void draw() {
   background(255);
   player.displayPlayer();
-  level.drawMap(player.getX());
+  level.drawMap();
+  level.calculateCollisions();
   player.addX(3.5);
   player.addY(player.getVelocityY());
 }

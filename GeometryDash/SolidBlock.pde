@@ -3,4 +3,10 @@ public class SolidBlock extends LevelObject {
     super(x, y, r, imageID);
     setHitbox(new Hitbox(x-15, y-15, x+15, y+15));
   }
+  
+  public void collideWithPlayer(Player player) {
+    if (getHitbox().collidesWith(player.smallHitbox())) {
+      println("die");
+    }
+  }
 }
