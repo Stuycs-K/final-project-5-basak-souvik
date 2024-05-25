@@ -10,7 +10,7 @@ void setup() {
   //println(test3.collidesWith(test4));
   size(1000,600);
   level = new Level(2);
-  player = new Player(15,15,0,0, "cube");
+  player = new Player(15,15,0,0, new Gamemode());
 }
   
 void draw() {
@@ -18,4 +18,11 @@ void draw() {
   player.displayPlayer();
   level.drawMap(player.getX());
   player.addX(3.5);
+  player.addY(player.getVelocityY());
+}
+
+void keyPressed () {
+  if (key == ' ') {
+    
+  }
 }

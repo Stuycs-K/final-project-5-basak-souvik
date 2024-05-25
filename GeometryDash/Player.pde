@@ -5,10 +5,10 @@ public class Player {
   private Hitbox largeHitbox;
   private Hitbox smallHitbox;
   private boolean alive;
-  private String gamemode;
+  private Gamemode gamemode;
   private PImage sprite;
   
-  public Player (double x, double y, double velociyY, int r, String gamemode) {
+  public Player (double x, double y, double velocityY, int r, Gamemode gamemode) {
     positionX = x;
     positionY = y;
     this.velocityY = velocityY;
@@ -29,6 +29,9 @@ public class Player {
   public double getY() {
     return positionY;
   }
+  public double getVelocityY() {
+    return velocityY;
+  }
   public void addX(double x) {
     positionX += x;
     largeHitbox.addX(x);
@@ -38,5 +41,12 @@ public class Player {
     positionY += y;
     largeHitbox.addY(y);
     smallHitbox.addY(y);
+  }
+  public void addVelocityY(double vel) {
+    velocityY += vel;
+  }
+  public void inputPressed () {
+    //if gamemode is cube
+    
   }
 }
