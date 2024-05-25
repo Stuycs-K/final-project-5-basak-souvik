@@ -1,7 +1,6 @@
 Level level;
 Player player;
 int playerOffset = 210;
-double gravity = 0.876;
 
 void setup() {
   imageMode(CENTER);
@@ -21,12 +20,8 @@ void draw() {
   level.drawMap();
   level.calculateCollisions();
   player.addX(4);
-  player.addY(player.getVelocityY());
-  player.setVelocityY(player.getVelocityY()+gravity/20);
 }
 
 void keyPressed () {
-  if (key == ' ') {
-    player.inputPressed();
-  }
+  
 }

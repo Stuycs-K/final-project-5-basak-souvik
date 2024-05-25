@@ -43,9 +43,6 @@ public class Player {
   public boolean canInput() {
     return canInput;
   }
-  public void setCanInput (boolean newVal) {
-    canInput = newVal;
-  }
   public void addX(double x) {
     positionX += x;
     largeHitbox.addX(x);
@@ -58,9 +55,5 @@ public class Player {
   }
   public void setVelocityY(double vel) {
     velocityY = vel;
-  }
-  public void inputPressed () {
-    //if gamemode is cube
-    gamemode.inputPressed(this);
   }
 }
