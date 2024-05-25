@@ -15,12 +15,12 @@ public class Player {
     rotation = r;
     sprite = loadImage("sprites/playerIcon1.png");
     largeHitbox = new Hitbox(x-15, y-15, x+15, y+15);
-    smallHitbox = new Hitbox(x-2, y-2, x+2, y+2);
+    smallHitbox = new Hitbox(x-3, y-3, x+3, y+3);
     this.gamemode = gamemode;
   }
   
   public void displayPlayer() {
-    image(sprite, playerOffset, (float) (height-positionY));
+    image(sprite, playerOffset, (float) (positionY));
   }
   
   public double getX() {

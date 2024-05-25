@@ -5,8 +5,12 @@ public class SolidBlock extends LevelObject {
   }
   
   public void collideWithPlayer(Player player) {
-    if (getHitbox().collidesWith(player.smallHitbox())) {
-      println("die");
+    if (getHitbox().collidesWith(player.largeHitbox())) {
+      if (getHitbox().collidesWith(player.smallHitbox())) {
+        println("die");
+      }
+      double hitboxIntersection = player.largeHitbox().y2() - getHitbox().y1();
+      println(hitboxIntersection);
     }
   }
 }

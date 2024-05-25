@@ -13,7 +13,7 @@ public abstract class LevelObject {
   }
   
   public void displayObject(double xOffset){
-    image(sprite, (float) (positionX-xOffset), (float) (height-positionY));
+    image(sprite, (float) (positionX-xOffset), (float) (positionY));
   }
   
   public abstract void collideWithPlayer(Player player);
