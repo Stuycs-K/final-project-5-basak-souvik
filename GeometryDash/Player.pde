@@ -32,6 +32,12 @@ public class Player {
   public double getVelocityY() {
     return velocityY;
   }
+  public Hitbox largeHitbox() {
+    return largeHitbox;
+  }
+  public Hitbox smallHitbox() {
+    return smallHitbox;
+  }
   public void addX(double x) {
     positionX += x;
     largeHitbox.addX(x);
