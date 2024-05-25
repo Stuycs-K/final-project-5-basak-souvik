@@ -10,7 +10,7 @@ public class SolidBlock extends LevelObject {
         println("die");
       }
       double hitboxIntersection = player.largeHitbox().y2() - getHitbox().y1();
-      if (hitboxIntersection <= 10) {
+      if (hitboxIntersection <= 6) {
         player.addY(-hitboxIntersection);
       }
     }

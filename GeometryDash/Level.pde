@@ -7,9 +7,11 @@ public class Level {
     objectList = new LevelObject[numObjects];
     this.player = player;
     //test
-    objectList[0] = new SolidBlock(525,height+10,0,1);
-    objectList[1] = new SolidBlock(555,height+10,0,1);
-    objectList[2] = new SolidBlock(2000,height-15,0,1);
+    objectList[0] = new SolidBlock(525,height+9,0,1);
+    objectList[1] = new SolidBlock(555,height+3,0,1);
+    objectList[2] = new SolidBlock(585,height-3,0,1);
+    objectList[3] = new SolidBlock(615,height-9,0,1);
+    objectList[4] = new SolidBlock(2000,height-15,0,1);
   }
   
   public void drawMap() {

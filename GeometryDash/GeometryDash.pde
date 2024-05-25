@@ -11,7 +11,7 @@ void setup() {
   //println(test3.collidesWith(test4));
   size(1000,600);
   player = new Player(225,height-15,0,0, new Gamemode());
-  level = new Level(3, player);
+  level = new Level(5, player);
 }
   
 void draw() {
