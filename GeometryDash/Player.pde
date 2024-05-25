@@ -7,6 +7,7 @@ public class Player {
   private boolean alive;
   private Gamemode gamemode;
   private PImage sprite;
+  private boolean canInput;
   
   public Player (double x, double y, double velocityY, int r, Gamemode gamemode) {
     positionX = x;
@@ -17,6 +18,7 @@ public class Player {
     largeHitbox = new Hitbox(x-15, y-15, x+15, y+15);
     smallHitbox = new Hitbox(x-3, y-3, x+3, y+3);
     this.gamemode = gamemode;
+    canInput = true;
   }
   
   public void displayPlayer() {
@@ -38,6 +40,12 @@ public class Player {
   public Hitbox smallHitbox() {
     return smallHitbox;
   }
+  public boolean canInput() {
+    return canInput;
+  }
+  public void setCanInput (boolean newVal) {
+    canInput = newVal;
+  }
   public void addX(double x) {
     positionX += x;
     largeHitbox.addX(x);
@@ -48,11 +56,11 @@ public class Player {
     largeHitbox.addY(y);
     smallHitbox.addY(y);
   }
-  public void addVelocityY(double vel) {
-    velocityY += vel;
+  public void setVelocityY(double vel) {
+    velocityY = vel;
   }
   public void inputPressed () {
     //if gamemode is cube
-    
+    gamemode.inputPressed(this);
   }
 }

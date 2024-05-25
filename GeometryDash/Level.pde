@@ -64,5 +64,6 @@ public class Level {
         objectList[i].collideWithPlayer(player);
       }
     }
+    
   }
 }

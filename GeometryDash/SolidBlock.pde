@@ -13,6 +13,7 @@ public class SolidBlock extends LevelObject {
       double hitboxIntersection = player.largeHitbox().y2() - getHitbox().y1();
       if (hitboxIntersection <= 6) {
         player.addY(-hitboxIntersection);
+        player.setCanInput(true);
       }
     }
   }
