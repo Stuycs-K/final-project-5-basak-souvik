@@ -26,7 +26,17 @@ public class Player {
   public double getX() {
     return positionX;
   }
+  public double getY() {
+    return positionY;
+  }
   public void addX(double x) {
     positionX += x;
+    largeHitbox.addX(x);
+    smallHitbox.addX(x);
+  }
+  public void addY(double y) {
+    positionY += y;
+    largeHitbox.addY(y);
+    smallHitbox.addY(y);
   }
 }

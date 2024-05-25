@@ -17,10 +17,23 @@ public abstract class LevelObject {
   }
   //public abstract void collideWithPlayer(Player player);
   
-  public double getX() {return positionX;}
-  public double getY() {return positionY;}
-  public int getRotation() {return rotation;}
-  public PImage getSprite() {return sprite;}
-  public Hitbox getHitbox() {return hitbox;}
-  public void setHitbox(Hitbox box) {hitbox = box;}
+  public double getX() {
+    return positionX;
+  }
+  public double getY() {
+    return positionY;
+  }
+  public int getRotation() {
+    return rotation;
+  }
+  public PImage getSprite() {
+    return sprite;
+  }
+  public Hitbox getHitbox() {
+    return hitbox;
+  }
+  //called in child classes
+  public void setHitbox(Hitbox box) {
+    hitbox = box;
+  }
 }

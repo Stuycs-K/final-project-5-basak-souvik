@@ -17,5 +17,5 @@ void draw() {
   background(255);
   player.displayPlayer();
   level.drawMap(player.getX());
-  player.setX(player.getX()+3.5);
+  player.addX(3.5);
 }

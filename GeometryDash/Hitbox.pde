@@ -14,8 +14,24 @@ public class Hitbox {
     return true;
   }
   
-  public double x1() {return x1;}
-  public double y1() {return y1;}
-  public double x2() {return x2;}
-  public double y2() {return y2;}
+  public double x1() {
+    return x1;
+  }
+  public double y1() {
+    return y1;
+  }
+  public double x2() {
+    return x2;
+  }
+  public double y2() {
+    return y2;
+  }
+  public void addX(double increment) {
+    x1 += increment;
+    x2 += increment;
+  }
+  public void addY(double increment) {
+    y1 += increment;
+    y2 += increment;
+  }
 }
