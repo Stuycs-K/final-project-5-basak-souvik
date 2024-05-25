@@ -1,5 +1,6 @@
 Level level;
 Player player;
+int playerOffset = 210;
 
 void setup() {
   imageMode(CENTER);
@@ -9,7 +10,7 @@ void setup() {
   //Hitbox test4 = new Hitbox(6,6,7,7);
   //println(test3.collidesWith(test4));
   size(1000,600);
-  level = new Level(2);
+  level = new Level(3);
   player = new Player(15,15,0,0, new Gamemode());
 }
   
