@@ -10,12 +10,12 @@ void setup() {
   //println(test3.collidesWith(test4));
   size(1000,600);
   level = new Level(2);
-  player = new Player(15,15,0,0);
+  player = new Player(15,15,0,0, "cube");
 }
   
 void draw() {
   background(255);
   player.displayPlayer();
   level.drawMap(player.getX());
-  player.setX(player.getX()+3);
+  player.setX(player.getX()+3.5);
 }

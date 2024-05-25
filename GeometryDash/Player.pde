@@ -5,10 +5,10 @@ public class Player {
   private Hitbox largeHitbox;
   private Hitbox smallHitbox;
   private boolean alive;
-  private Gamemode gamemode;
+  private String gamemode;
   private PImage sprite;
   
-  public Player (double x, double y, double velociyY, int r) {
+  public Player (double x, double y, double velociyY, int r, String gamemode) {
     positionX = x;
     positionY = y;
     this.velocityY = velocityY;
@@ -16,6 +16,7 @@ public class Player {
     sprite = loadImage("sprites/playerIcon1.png");
     largeHitbox = new Hitbox(x-15, y-15, x+15, y+15);
     smallHitbox = new Hitbox(x-2, y-2, x+2, y+2);
+    this.gamemode = gamemode;
   }
   
   public void displayPlayer() {
@@ -25,7 +26,7 @@ public class Player {
   public double getX() {
     return positionX;
   }
-  public void setX(double x) {
-    positionX = x;
+  public void addX(double x) {
+    positionX += x;
   }
 }
