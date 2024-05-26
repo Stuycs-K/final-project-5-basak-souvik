@@ -1,6 +1,5 @@
-Level level;
-Player player;
 int playerOffset = 210;
+Game game;
 
 void setup() {
   imageMode(CENTER);
@@ -10,16 +9,12 @@ void setup() {
   //Hitbox test4 = new Hitbox(6,6,7,7);
   //println(test3.collidesWith(test4));
   size(1000,600);
-  player = new Player(225,height-15,0,0, new Gamemode("cube"));
-  level = new Level(33, player);
+  game = new Game();
 }
   
 void draw() {
-  background(#0000FF);
-  player.displayPlayer();
-  level.drawMap();
-  level.calculateCollisions();
-  player.addX(4);
+  background(#283EFF);
+  game.playFrame();
 }
 
 void keyPressed () {

@@ -19,6 +19,7 @@ public class Player {
     smallHitbox = new Hitbox(x-3, y-3, x+3, y+3);
     this.gamemode = gamemode;
     canInput = true;
+    alive = true;
   }
   
   public void displayPlayer() {
@@ -45,6 +46,9 @@ public class Player {
   }
   public Gamemode gamemode() {
     return gamemode;
+  }
+  public boolean isAlive() {
+    return alive;
   }
   public void addX(double x) {
     positionX += x;

@@ -4,6 +4,7 @@ public class Hazard extends LevelObject {
     if (imageID == 8) {
       
     }
+    setHitbox(new Hitbox(0,0,0,0));
   }
   
   public void collideWithPlayer(Player player) {
