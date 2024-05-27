@@ -4,7 +4,6 @@ public class Level {
   private int startIndex = 0;
   
   public Level (String levelName, Player player) {
-    //later, use level name in constructor
     this.player = player;
     if (levelName.equals("Stereo Madness")) {
       objectList = new StereoMadness().list;
