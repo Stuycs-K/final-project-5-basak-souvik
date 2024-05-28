@@ -9,11 +9,13 @@ public abstract class LevelObject {
     positionX = x;
     positionY = y;
     rotation = r;
-    sprite = loadImage("sprites/" + imageID + ".png");
+    sprite = loadImage("sprites/" + imageID + "_" + r + ".png");
   }
   
   public void displayObject(double xOffset){
-    image(sprite, (float) (positionX-xOffset), (float) (positionY));
+    if (sprite != null) {
+      image(sprite, (float) (positionX-xOffset), (float) (positionY));
+    }
   }
   
   public abstract void collideWithPlayer(Player player);

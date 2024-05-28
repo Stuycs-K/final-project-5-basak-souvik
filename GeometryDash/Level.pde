@@ -32,6 +32,9 @@ public class Level {
         objectList[i].collideWithPlayer(player);
       }
     }
-    
+  }
+  
+  public LevelObject[] readLevelFile(String filename) {
+    return null;
   }
 }
