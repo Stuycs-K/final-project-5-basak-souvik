@@ -1,3 +1,7 @@
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+
 public class Level {
   private Player player;
   private LevelObject objectList[];
@@ -5,9 +9,7 @@ public class Level {
   
   public Level (String levelName, Player player) {
     this.player = player;
-    if (levelName.equals("Stereo Madness")) {
-      objectList = new StereoMadness().list;
-    }
+    objectList = readLevelFile(levelName);
   }
   
   public void drawMap() {
@@ -35,6 +37,11 @@ public class Level {
   }
   
   public LevelObject[] readLevelFile(String filename) {
+    String[] lines = loadStrings("stereomadness.txt");
+    LevelObject[] output = new LevelObject[lines.length];
+    for (int i = 0; i < lines.length; i++) {
+      
+    }
     return null;
   }
 }

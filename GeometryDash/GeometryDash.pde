@@ -1,5 +1,6 @@
 int playerOffset = 210;
 Game game;
+boolean paused = false;
 
 void setup() {
   imageMode(CENTER);
@@ -12,5 +13,7 @@ void draw() {
 }
 
 void keyPressed () {
-  
+  if (key == 'p') {
+    paused = !paused;
+  }
 }

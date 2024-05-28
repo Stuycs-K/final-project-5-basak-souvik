@@ -6,7 +6,7 @@ public class Game {
   public Game () {
     player = new Player(225,height-15,0,0, new Gamemode("cube"));
     levels = new Level[1];
-    levels[0] = new Level("Stereo Madness", player);
+    levels[0] = new Level("stereomadness", player);
     currentLevel = levels[0];
   }
   
@@ -16,9 +16,9 @@ public class Game {
       player.displayPlayer();
       currentLevel.drawMap();
       currentLevel.calculateCollisions();
-      //if (player.isAlive()) {
-        player.addX(8);//5.193
-      //}
+      if (!paused) {
+        player.addX(5.193);//5.193
+      }
     }
   }
 }
