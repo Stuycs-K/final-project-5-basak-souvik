@@ -11,12 +11,13 @@ public class Game {
   }
   
   public void playFrame() {
+    background(#283EFF);
     if (currentLevel != null) {
       player.displayPlayer();
       currentLevel.drawMap();
       currentLevel.calculateCollisions();
       //if (player.isAlive()) {
-        player.addX(5.193);
+        player.addX(10);//5.193
       //}
     }
   }

@@ -6,9 +6,8 @@ void setup() {
   size(1000,600);
   game = new Game();
 }
-  
+
 void draw() {
-  background(#283EFF);
   game.playFrame();
 }
 
