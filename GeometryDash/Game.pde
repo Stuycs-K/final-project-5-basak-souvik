@@ -17,7 +17,7 @@ public class Game {
       currentLevel.drawMap();
       currentLevel.calculateCollisions();
       if (!paused) {
-        player.addX(15);//5.193
+        player.addX(20);//5.193
       }
     }
   }
