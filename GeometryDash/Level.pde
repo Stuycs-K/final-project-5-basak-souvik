@@ -17,9 +17,9 @@ public class Level {
   public void drawMap() {
     for (int i = startIndex; i < objectList.length; i++) {
       if (objectList[i].getX() < player.getX()-playerOffset) {
-        //startIndex++;
+        startIndex++;
       } else if (objectList[i].getX()-player.getX()-playerOffset > width) {
-        //break;
+        break;
       } else {
         objectList[i].displayObject(player.getX()-playerOffset);
       }
