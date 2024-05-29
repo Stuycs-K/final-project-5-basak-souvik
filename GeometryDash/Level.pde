@@ -9,9 +9,7 @@ public class Level {
   
   public Level (String levelName, Player player) {
     this.player = player;
-    if (levelName.equals("stereomadness")) {
-      objectList = new StereoMadness().objectList;
-    }
+    objectList = readLevelFile(levelName+".txt");
   }
   
   public void drawMap() {
@@ -39,27 +37,20 @@ public class Level {
   }
   
   public LevelObject[] readLevelFile(String filename) {
-    //try {
-    //  File file = new File("stereomadness.txt");
-    //  Scanner in = new Scanner(file);
-    //  int numObjects = in.nextInt();
-    //  LevelObject[] output = new LevelObject[numObjects];
-    //  for (int i = 0; i < numObjects; i++) {
-    //    String[] line = in.nextLine().split(",");
-    //    if (line[0].equals("Hazard")) {
-    //      output[i] = new Hazard(Double.parseDouble(line[1]), Double.parseDouble(line[2]), Integer.parseInt(line[3]), Integer.parseInt(line[4]));
-    //    }
-    //  }
-    //  in.close();
-    //  return output;
-    //} catch (FileNotFoundException e) {println("not found");}
-    //return null;
-    //String[] lines = loadStrings("stereomadness.txt");
-    //LevelObject[] output = new LevelObject[lines.length];
-    //for (int i = 0; i < lines.length; i++) {
-    //  String[] line = lines[i].split(",");
-      
-    //}
-    return null;
+    String[] lines = loadStrings("stereomadness.txt");
+    LevelObject[] output = new LevelObject[lines.length];
+    for (int i = 0; i < lines.length; i++) {
+      String[] line = lines[i].split(",");
+      if (line[0].equals("Hazard")) {
+        output[i] = new Hazard(Double.parseDouble(line[1]),height-Double.parseDouble(line[2]),Integer.parseInt(line[3]),Integer.parseInt(line[4]));
+      } else if (line[0].equals("DecorationBlock")) {
+        output[i] = new DecorationBlock(Double.parseDouble(line[1]),height-Double.parseDouble(line[2]),Integer.parseInt(line[3]),Integer.parseInt(line[4]));
+      } else if (line[0].equals("SolidBlock")) {
+        output[i] = new SolidBlock(Double.parseDouble(line[1]),height-Double.parseDouble(line[2]),Integer.parseInt(line[3]),Integer.parseInt(line[4]));
+      } else if (line[0].equals("Portal")) {
+        output[i] = new Portal(Double.parseDouble(line[1]),height-Double.parseDouble(line[2]),Integer.parseInt(line[3]),Integer.parseInt(line[4]));
+      }
+    }
+    return output;
   }
 }
