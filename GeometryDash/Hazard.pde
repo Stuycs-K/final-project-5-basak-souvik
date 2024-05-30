@@ -12,7 +12,7 @@ public class Hazard extends LevelObject {
   
   public void collideWithPlayer(Player player) {
     if (getHitbox().collidesWith(player.largeHitbox())) {
-      if (!noclip) player.setAliveState(false);
+      player.setAliveState(false);
     }
   }
 }

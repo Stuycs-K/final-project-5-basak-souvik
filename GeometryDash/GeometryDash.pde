@@ -1,4 +1,7 @@
-int PLAYER_OFFSET = 210;
+import processing.sound.*;
+SoundFile deathEffect;
+
+int PLAYER_OFFSET = 225;
 Game game;
 boolean paused = false;
 boolean noclip = false;
@@ -10,6 +13,7 @@ void setup() {
   size(1000,500);
   FLOOR = height-15;
   game = new Game();
+  deathEffect = new SoundFile(this, "deathEffect.mp3");
 }
 
 void draw() {

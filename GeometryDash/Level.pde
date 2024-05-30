@@ -69,6 +69,7 @@ public class Level {
     try {
       Thread.sleep(1000);
     } catch (InterruptedException e) {}
+    player.reset();
     drawStartIndex = 0;
     collisionStartIndex = 0;
   }

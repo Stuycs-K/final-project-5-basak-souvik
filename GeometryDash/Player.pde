@@ -75,13 +75,18 @@ public class Player {
     velocityY = vel;
   }
   public void setAliveState(boolean newState) {
-    alive = newState;
+    if (!noclip || newState) {
+      alive = newState;
+      if (!newState) {
+        deathEffect.play();
+      }
+    }
   }
   public void setCanInput(boolean newVal) {
     canInput = newVal;
   }
-  public void reset(double startX) {
-    positionX = startX;
+  public void reset() {
+    positionX = PLAYER_OFFSET;
     positionY = height-15;
     velocityY = 0;
     largeHitbox = new Hitbox(positionX-15, positionY-15, positionX+15, positionY+15);
