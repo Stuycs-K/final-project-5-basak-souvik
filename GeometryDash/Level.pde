@@ -55,6 +55,9 @@ public class Level {
   }
   
   public void reset() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {}
     startIndex = 0;
   }
 }
