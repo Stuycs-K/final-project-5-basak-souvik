@@ -34,4 +34,7 @@ public class Game {
     }
     
   }
+  public void playerInput() {
+    player.setVelocityY(-13);
+  }
 }

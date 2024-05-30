@@ -74,8 +74,11 @@ public class Player {
     alive = newState;
   }
   public void move() {
-    velocityY += 1;
+    velocityY += 1;//gravity
     addY(velocityY);
+    if (velocityY >= 3) {
+      velocityY = 3;
+    }
     //println(velocityY);
   }
   public void reset(double startX) {

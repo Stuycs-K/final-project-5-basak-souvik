@@ -22,4 +22,7 @@ void keyPressed () {
   if (key == 'n') {
     noclip = !noclip;
   }
+  if (key == ' ') {
+    game.playerInput();
+  }
 }
