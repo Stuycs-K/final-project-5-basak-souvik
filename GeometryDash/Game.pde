@@ -27,9 +27,7 @@ public class Game {
       player.displayPlayer();
       currentLevel.drawMap();
       currentLevel.movePlayer();
-      if (!paused && player.isAlive()) {
-        player.addX(5.193);//5.193
-      }
+      
     }
     
   }

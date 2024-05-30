@@ -8,9 +8,12 @@ public class Portal extends LevelObject {
     } else if (imageID == 12) {
       portalType = "cube";
     }
+    setHitbox(new Hitbox(0,0,0,0));
   }
   
   public void collideWithPlayer(Player player) {
-    player.setGamemode(portalType);
+    if (getHitbox().collidesWith(player.largeHitbox())) {
+      player.setGamemode(portalType);
+    }
   }
 }

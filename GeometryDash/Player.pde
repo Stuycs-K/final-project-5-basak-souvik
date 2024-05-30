@@ -68,6 +68,7 @@ public class Player {
       smallHitbox.addY(FLOOR-positionY);
       positionY = FLOOR;
       velocityY = 0;
+      canInput = true;
     }
   }
   public void setVelocityY(double vel) {
@@ -76,7 +77,9 @@ public class Player {
   public void setAliveState(boolean newState) {
     alive = newState;
   }
-  
+  public void setCanInput(boolean newVal) {
+    canInput = newVal;
+  }
   public void reset(double startX) {
     positionX = startX;
     positionY = height-15;
@@ -89,10 +92,17 @@ public class Player {
   
   public void inputPressed() {
     if (gamemode.equals("cube")) {
+      println("successful jump");
       cubeJump();
+    } else {
+      println(positionX);
+      paused = true;
     }
   }
   public void cubeJump() {
-    velocityY = -10.07442;
+    if (canInput) {
+      velocityY = -10.07442;
+      canInput = false;
+    }
   }
 }

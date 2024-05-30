@@ -64,6 +64,9 @@ public class Level {
       player.addY(player.getVelocityY()/10);
       calculateCollisions();
     }
+    if (!paused && player.isAlive()) {
+      player.addX(5.193);//5.193
+    }
   }
   
   public void reset() {
