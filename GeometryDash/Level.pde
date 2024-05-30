@@ -14,21 +14,21 @@ public class Level {
   
   public void drawMap() {
     for (int i = startIndex; i < objectList.length; i++) {
-      if (objectList[i].getX() < player.getX()-playerOffset) {
+      if (objectList[i].getX() < player.getX()-PLAYER_OFFSET) {
         startIndex++;
-      } else if (objectList[i].getX()-player.getX()-playerOffset > width) {
+      } else if (objectList[i].getX()-player.getX()-PLAYER_OFFSET > width) {
         break;
       } else {
-        objectList[i].displayObject(player.getX()-playerOffset);
+        objectList[i].displayObject(player.getX()-PLAYER_OFFSET);
       }
     }
   }
   
   public void calculateCollisions() {
     for (int i = startIndex; i < objectList.length; i++) {
-      if (objectList[i].getX() < player.getX()-playerOffset) {
+      if (objectList[i].getX() < player.getX()-PLAYER_OFFSET) {
         startIndex++;
-      } else if (objectList[i].getX()-player.getX()-playerOffset > width) {
+      } else if (objectList[i].getX()-player.getX()-PLAYER_OFFSET > width) {
         break;
       } else {
         objectList[i].collideWithPlayer(player);

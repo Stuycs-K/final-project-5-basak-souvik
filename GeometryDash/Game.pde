@@ -25,6 +25,7 @@ public class Game {
     
     if (currentLevel != null) {
       player.displayPlayer();
+      player.move();
       currentLevel.drawMap();
       currentLevel.calculateCollisions();
       if (!paused && player.isAlive()) {

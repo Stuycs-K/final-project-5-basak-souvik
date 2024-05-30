@@ -1,11 +1,13 @@
-int playerOffset = 210;
+int PLAYER_OFFSET = 210;
 Game game;
 boolean paused = false;
 boolean noclip = false;
+double FLOOR;
 
 void setup() {
   imageMode(CENTER);
   size(1000,500);
+  FLOOR = height-15;
   game = new Game();
 }
 

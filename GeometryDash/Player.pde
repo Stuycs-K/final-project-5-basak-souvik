@@ -23,7 +23,7 @@ public class Player {
   }
   
   public void displayPlayer() {
-    image(sprite, playerOffset, (float) (positionY));
+    image(sprite, PLAYER_OFFSET, (float) (positionY));
   }
   
   public double getX() {
@@ -59,12 +59,24 @@ public class Player {
     positionY += y;
     largeHitbox.addY(y);
     smallHitbox.addY(y);
+    
+    if (positionY > FLOOR) {
+      largeHitbox.addY(FLOOR-positionY);
+      smallHitbox.addY(FLOOR-positionY);
+      positionY = FLOOR;
+      velocityY = 0;
+    }
   }
   public void setVelocityY(double vel) {
     velocityY = vel;
   }
   public void setAliveState(boolean newState) {
     alive = newState;
+  }
+  public void move() {
+    velocityY += 1;
+    addY(velocityY);
+    //println(velocityY);
   }
   public void reset(double startX) {
     positionX = startX;
