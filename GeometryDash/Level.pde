@@ -52,16 +52,16 @@ public class Level {
   }
   
   public void movePlayer() {
-    player.setVelocityY(player.getVelocityY()+gravity);
-    if (player.getVelocityY() >= 13.5018) {
-      player.setVelocityY(13.5018);
-    }
-    for (int i = 0; i < 10; i++) {
-      player.addY(player.getVelocityY()/10);
-      calculateCollisions();
-    }
     if (!paused && player.isAlive()) {
-      player.addX(5.193);//5.193
+      player.setVelocityY(player.getVelocityY()+gravity);
+      if (player.getVelocityY() >= 13.5018) {
+        player.setVelocityY(13.5018);
+      }
+      for (int i = 0; i < 10; i++) {
+        player.addY(player.getVelocityY()/10);
+        calculateCollisions();
+      }
+      player.addX(5.193);
     }
   }
   

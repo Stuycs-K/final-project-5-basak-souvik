@@ -27,7 +27,7 @@ void keyPressed () {
   if (key == 'n') {
     noclip = !noclip;
   }
-  if (key == ' ') {
+  if (key == ' ' && !paused) {
     game.playerInput();
   }
 }
