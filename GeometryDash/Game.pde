@@ -13,10 +13,14 @@ public class Game {
   public void playFrame() {
     background(#283EFF);
     if (noclip) {
-      text("NOCLIP: ON", 20, 20);
+      text("NOCLIP", 20, 20);
     }
     if (paused) {
       text("PAUSED", 20, 40);
+    }
+    if (!player.isAlive()) {
+      player.reset(225);
+      currentLevel.reset();
     }
     
     if (currentLevel != null) {

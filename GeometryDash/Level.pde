@@ -53,4 +53,8 @@ public class Level {
     }
     return output;
   }
+  
+  public void reset() {
+    startIndex = 0;
+  }
 }

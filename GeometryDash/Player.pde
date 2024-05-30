@@ -66,4 +66,12 @@ public class Player {
   public void setAliveState(boolean newState) {
     alive = newState;
   }
+  public void reset(double startX) {
+    positionX = startX;
+    positionY = height-15;
+    largeHitbox = new Hitbox(positionX-15, positionY-15, positionX+15, positionY+15);
+    smallHitbox = new Hitbox(positionX-3, positionY-3, positionX+3, positionY+3);
+    gamemode = new Gamemode("cube");
+    alive = true;
+  }
 }
