@@ -12,13 +12,21 @@ public class Game {
   
   public void playFrame() {
     background(#283EFF);
+    if (noclip) {
+      text("NOCLIP: ON", 20, 20);
+    }
+    if (paused) {
+      text("PAUSED", 20, 40);
+    }
+    
     if (currentLevel != null) {
       player.displayPlayer();
       currentLevel.drawMap();
       currentLevel.calculateCollisions();
-      if (!paused) {
-        player.addX(20);//5.193
+      if (!paused && player.isAlive()) {
+        player.addX(5.193);//5.193
       }
     }
+    
   }
 }

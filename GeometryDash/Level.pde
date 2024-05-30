@@ -14,21 +14,21 @@ public class Level {
   
   public void drawMap() {
     for (int i = startIndex; i < objectList.length; i++) {
-      if (objectList[i].getX() < player.getX()) {
+      if (objectList[i].getX() < player.getX()-playerOffset) {
         startIndex++;
-      } else if (objectList[i].getX()-player.getX() > width) {
+      } else if (objectList[i].getX()-player.getX()-playerOffset > width) {
         break;
       } else {
-        objectList[i].displayObject(player.getX());
+        objectList[i].displayObject(player.getX()-playerOffset);
       }
     }
   }
   
   public void calculateCollisions() {
     for (int i = startIndex; i < objectList.length; i++) {
-      if (objectList[i].getX() < player.getX()) {
+      if (objectList[i].getX() < player.getX()-playerOffset) {
         startIndex++;
-      } else if (objectList[i].getX()-player.getX() > width) {
+      } else if (objectList[i].getX()-player.getX()-playerOffset > width) {
         break;
       } else {
         objectList[i].collideWithPlayer(player);
@@ -37,7 +37,7 @@ public class Level {
   }
   
   public LevelObject[] readLevelFile(String filename) {
-    String[] lines = loadStrings("stereomadness.txt");
+    String[] lines = loadStrings(filename);
     LevelObject[] output = new LevelObject[lines.length];
     for (int i = 0; i < lines.length; i++) {
       String[] line = lines[i].split(",");
