@@ -11,25 +11,22 @@ public class Game {
   }
   
   public void playFrame() {
-    background(#283EFF);
-    if (noclip) {
-      text("NOCLIP", 20, 20);
-    }
-    if (paused) {
-      text("PAUSED", 20, 40);
-    }
-    if (!player.isAlive()) {
-      player.reset(225);
-      currentLevel.reset();
-    }
-    
+    background(#283EFF);   
     if (currentLevel != null) {
+      if (noclip) {
+        text("NOCLIP", 20, 20);
+      }
+      if (paused) {
+        text("PAUSED", 20, 40);
+      }
+      if (!player.isAlive()) {
+        player.reset(225);
+        currentLevel.reset();
+      }
       player.displayPlayer();
       currentLevel.drawMap();
       currentLevel.movePlayer();
-      
     }
-    
   }
   public void playerInput() {
     player.inputPressed();//pixels/frame

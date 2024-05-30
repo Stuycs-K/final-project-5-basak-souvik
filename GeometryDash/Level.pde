@@ -1,7 +1,3 @@
-import java.io.File;
-import java.util.Scanner;
-import java.io.FileNotFoundException;
-
 public class Level {
   private Player player;
   private LevelObject objectList[];
@@ -27,9 +23,9 @@ public class Level {
   
   public void calculateCollisions() {
     for (int i = collisionStartIndex; i < objectList.length; i++) {
-      if (objectList[i].getX() < player.getX()-PLAYER_OFFSET) {
+      if (objectList[i].getX() < player.getX()-45) {
         collisionStartIndex++;
-      } else if (objectList[i].getX()-player.getX()-PLAYER_OFFSET > width) {
+      } else if (objectList[i].getX()-player.getX() > 45) {
         break;
       } else {
         objectList[i].collideWithPlayer(player);

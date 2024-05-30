@@ -92,11 +92,7 @@ public class Player {
   
   public void inputPressed() {
     if (gamemode.equals("cube")) {
-      println("successful jump");
       cubeJump();
-    } else {
-      println(positionX);
-      paused = true;
     }
   }
   public void cubeJump() {
