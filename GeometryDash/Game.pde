@@ -4,7 +4,7 @@ public class Game {
   private Level currentLevel;
   
   public Game () {
-    player = new Player(225,height-15,0,0, new Gamemode("cube"));
+    player = new Player(225,height-15,0,0, "cube");
     levels = new Level[1];
     levels[0] = new Level("stereomadness", player);
     currentLevel = levels[0];
@@ -25,9 +25,8 @@ public class Game {
     
     if (currentLevel != null) {
       player.displayPlayer();
-      player.move();
       currentLevel.drawMap();
-      currentLevel.calculateCollisions();
+      currentLevel.movePlayer();
       if (!paused && player.isAlive()) {
         player.addX(5.193);//5.193
       }
@@ -35,6 +34,6 @@ public class Game {
     
   }
   public void playerInput() {
-    player.setVelocityY(-13);
+    player.inputPressed();//pixels/frame
   }
 }

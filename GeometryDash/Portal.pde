@@ -11,6 +11,6 @@ public class Portal extends LevelObject {
   }
   
   public void collideWithPlayer(Player player) {
-    player.gamemode().setGamemode(portalType);
+    player.setGamemode(portalType);
   }
 }

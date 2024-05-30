@@ -3,6 +3,7 @@ Game game;
 boolean paused = false;
 boolean noclip = false;
 double FLOOR;
+double gravity = 4.533489/6;
 
 void setup() {
   imageMode(CENTER);

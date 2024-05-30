@@ -5,7 +5,8 @@ import java.io.FileNotFoundException;
 public class Level {
   private Player player;
   private LevelObject objectList[];
-  private int startIndex = 0;
+  private int drawStartIndex = 0;
+  private int collisionStartIndex = 0;
   
   public Level (String levelName, Player player) {
     this.player = player;
@@ -13,9 +14,9 @@ public class Level {
   }
   
   public void drawMap() {
-    for (int i = startIndex; i < objectList.length; i++) {
+    for (int i = drawStartIndex; i < objectList.length; i++) {
       if (objectList[i].getX() < player.getX()-PLAYER_OFFSET) {
-        startIndex++;
+        drawStartIndex++;
       } else if (objectList[i].getX()-player.getX()-PLAYER_OFFSET > width) {
         break;
       } else {
@@ -25,9 +26,9 @@ public class Level {
   }
   
   public void calculateCollisions() {
-    for (int i = startIndex; i < objectList.length; i++) {
+    for (int i = collisionStartIndex; i < objectList.length; i++) {
       if (objectList[i].getX() < player.getX()-PLAYER_OFFSET) {
-        startIndex++;
+        collisionStartIndex++;
       } else if (objectList[i].getX()-player.getX()-PLAYER_OFFSET > width) {
         break;
       } else {
@@ -54,10 +55,22 @@ public class Level {
     return output;
   }
   
+  public void movePlayer() {
+    player.setVelocityY(player.getVelocityY()+gravity);
+    if (player.getVelocityY() >= 13.5018) {
+      player.setVelocityY(13.5018);
+    }
+    for (int i = 0; i < 10; i++) {
+      player.addY(player.getVelocityY()/10);
+      calculateCollisions();
+    }
+  }
+  
   public void reset() {
     try {
       Thread.sleep(1000);
     } catch (InterruptedException e) {}
-    startIndex = 0;
+    drawStartIndex = 0;
+    collisionStartIndex = 0;
   }
 }

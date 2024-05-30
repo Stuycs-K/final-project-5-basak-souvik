@@ -5,11 +5,11 @@ public class Player {
   private Hitbox largeHitbox;
   private Hitbox smallHitbox;
   private boolean alive;
-  private Gamemode gamemode;
+  private String gamemode;
   private PImage sprite;
   private boolean canInput;
   
-  public Player (double x, double y, double velocityY, int r, Gamemode gamemode) {
+  public Player (double x, double y, double velocityY, int r, String gamemode) {
     positionX = x;
     positionY = y;
     this.velocityY = velocityY;
@@ -44,8 +44,11 @@ public class Player {
   public boolean canInput() {
     return canInput;
   }
-  public Gamemode gamemode() {
+  public String gamemode() {
     return gamemode;
+  }
+  public void setGamemode (String newMode) {
+    gamemode = newMode;
   }
   public boolean isAlive() {
     return alive;
@@ -73,20 +76,23 @@ public class Player {
   public void setAliveState(boolean newState) {
     alive = newState;
   }
-  public void move() {
-    velocityY += 1;//gravity
-    addY(velocityY);
-    if (velocityY >= 3) {
-      velocityY = 3;
-    }
-    //println(velocityY);
-  }
+  
   public void reset(double startX) {
     positionX = startX;
     positionY = height-15;
+    velocityY = 0;
     largeHitbox = new Hitbox(positionX-15, positionY-15, positionX+15, positionY+15);
     smallHitbox = new Hitbox(positionX-3, positionY-3, positionX+3, positionY+3);
-    gamemode = new Gamemode("cube");
+    gamemode = "cube";
     alive = true;
+  }
+  
+  public void inputPressed() {
+    if (gamemode.equals("cube")) {
+      cubeJump();
+    }
+  }
+  public void cubeJump() {
+    velocityY = -10.07442;
   }
 }
