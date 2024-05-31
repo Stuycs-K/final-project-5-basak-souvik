@@ -4,11 +4,12 @@ public class Player {
   private int rotation;
   private Hitbox largeHitbox;
   private Hitbox smallHitbox;
-  private boolean alive;
+  private boolean alive = true;
   private String gamemode;
   private PImage sprite;
-  private boolean canInput;
+  private boolean canJump = true;;
   private double gravity = 0.7555815;
+  private boolean shipHeld = false;
   
   public Player (double x, double y, double velocityY, int r, String gamemode) {
     positionX = x;
@@ -19,8 +20,6 @@ public class Player {
     largeHitbox = new Hitbox(x-15, y-15, x+15, y+15);
     smallHitbox = new Hitbox(x-3, y-3, x+3, y+3);
     this.gamemode = gamemode;
-    canInput = true;
-    alive = true;
   }
   
   public void displayPlayer() {
@@ -42,8 +41,8 @@ public class Player {
   public Hitbox smallHitbox() {
     return smallHitbox;
   }
-  public boolean canInput() {
-    return canInput;
+  public boolean canJump() {
+    return canJump;
   }
   public String gamemode() {
     return gamemode;
@@ -72,7 +71,7 @@ public class Player {
       smallHitbox.addY(FLOOR-positionY);
       positionY = FLOOR;
       velocityY = 0;
-      canInput = true;
+      canJump = true;
     }
   }
   public void setVelocityY(double vel) {
@@ -86,8 +85,8 @@ public class Player {
       }
     }
   }
-  public void setCanInput(boolean newVal) {
-    canInput = newVal;
+  public void setCanJump(boolean newVal) {
+    canJump = newVal;
   }
   public void setGravity(double newVal) {
     gravity = newVal;
@@ -110,9 +109,15 @@ public class Player {
     }
   }
   public void cubeJump() {
-    if (canInput) {
+    if (canJump) {
       velocityY = -10.07442;
-      canInput = false;
+      canJump = false;
     }
+  }
+  public void shipHold() {
+    shipHeld = true;
+  }
+  public boolean shipHeld() {
+    return shipHeld;
   }
 }

@@ -4,7 +4,7 @@ public class Game {
   private Level currentLevel;
   
   public Game () {
-    player = new Player(PLAYER_OFFSET,height-15,0,0, "cube");
+    player = new Player(PLAYER_OFFSET,height-15,0,0, "ship");
     levels = new Level[1];
     levels[0] = new Level("stereomadness", player);
     currentLevel = levels[0];
