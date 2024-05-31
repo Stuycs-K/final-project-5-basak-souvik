@@ -105,7 +105,7 @@ public class Player {
     if (gamemode.equals("cube")) {
       cubeJump();
     } else if (gamemode.equals("ship")) {
-      
+      shipHeld = true;
     }
   }
   public void cubeJump() {
@@ -114,10 +114,10 @@ public class Player {
       canJump = false;
     }
   }
-  public void shipHold() {
-    shipHeld = true;
-  }
   public boolean shipHeld() {
     return shipHeld;
+  }
+  public void releaseInput() {
+    shipHeld = false;
   }
 }

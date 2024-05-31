@@ -32,4 +32,7 @@ public class Game {
   public void playerInput() {
     player.inputPressed();//pixels/frame
   }
+  public void playerRelease() {
+    player.releaseInput();
+  }
 }

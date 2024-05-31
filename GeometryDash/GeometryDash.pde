@@ -30,3 +30,9 @@ void keyPressed () {
     game.playerInput();
   }
 }
+
+void keyReleased() {
+  if (key == ' ') {
+    game.playerRelease();
+  }
+}

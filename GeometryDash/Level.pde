@@ -56,6 +56,13 @@ public class Level {
       player.setVelocityY(player.getVelocityY()+player.getGravity());
       if (player.gamemode.equals("cube") && player.getVelocityY() >= 13.5018) {
         player.setVelocityY(13.5018);
+      } else if (player.gamemode.equals("ship")) {
+        if (player.shipHeld()) {
+          player.setVelocityY(player.getVelocityY()-1.5);
+        }
+        if (player.getVelocityY() <= -10) {
+          player.setVelocityY(-10);
+        }
       }
     }
       for (int i = 0; i < 10; i++) {
@@ -63,7 +70,6 @@ public class Level {
         calculateCollisions();
       }
       player.addX(5.193);
-    }
   }
   
   public void reset() {
