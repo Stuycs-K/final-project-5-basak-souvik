@@ -53,9 +53,11 @@ public class Level {
   
   public void movePlayer() {
     if (!paused && player.isAlive()) {
-      player.setVelocityY(player.getVelocityY()+gravity);
-      if (player.getVelocityY() >= 13.5018) {
+      player.setVelocityY(player.getVelocityY()+player.getGravity());
+      if (player.gamemode.equals("cube") && player.getVelocityY() >= 13.5018) {
         player.setVelocityY(13.5018);
+      } else if (player.gamemode.equals("ship")) {
+        
       }
       for (int i = 0; i < 10; i++) {
         player.addY(player.getVelocityY()/10);

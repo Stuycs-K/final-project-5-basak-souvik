@@ -8,6 +8,7 @@ public class Player {
   private String gamemode;
   private PImage sprite;
   private boolean canInput;
+  private double gravity = 0.7555815;
   
   public Player (double x, double y, double velocityY, int r, String gamemode) {
     positionX = x;
@@ -53,6 +54,9 @@ public class Player {
   public boolean isAlive() {
     return alive;
   }
+  public double getGravity() {
+    return gravity;
+  }
   public void addX(double x) {
     positionX += x;
     largeHitbox.addX(x);
@@ -85,6 +89,9 @@ public class Player {
   public void setCanInput(boolean newVal) {
     canInput = newVal;
   }
+  public void setGravity(double newVal) {
+    gravity = newVal;
+  }
   public void reset() {
     positionX = PLAYER_OFFSET;
     positionY = height-15;
@@ -98,6 +105,8 @@ public class Player {
   public void inputPressed() {
     if (gamemode.equals("cube")) {
       cubeJump();
+    } else if (gamemode.equals("ship")) {
+      
     }
   }
   public void cubeJump() {

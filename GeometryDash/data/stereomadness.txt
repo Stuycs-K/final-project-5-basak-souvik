@@ -2889,7 +2889,6 @@ SolidBlock,22935,255,0,1
 SolidBlock,22935,285,0,1
 SolidBlock,22935,45,0,1
 SolidBlock,22935,15,0,1
-Portal,22935,149,0,13
 SolidBlock,22935,75,0,1
 SolidBlock,22935,345,0,1
 SolidBlock,22935,525,0,1

@@ -1,8 +1,9 @@
 public class SolidBlock extends LevelObject {
   public SolidBlock(double x, double y, int r, int imageID) {
     super(x, y, r, imageID);
-    //hitbox is 31 by 31 pixels
-    setHitbox(new Hitbox(x-15, y-15, x+15, y+15));
+    int spriteWidth = getSprite().width;
+    int spriteHeight = getSprite().height;
+    setHitbox(new Hitbox(x-spriteWidth/2, y-spriteHeight/2, x+spriteWidth/2, y+spriteHeight/2));
   }
   
   public void collideWithPlayer(Player player) {

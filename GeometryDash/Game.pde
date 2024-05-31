@@ -11,7 +11,7 @@ public class Game {
   }
   
   public void playFrame() {
-    background(#283EFF);   
+    background(#283EFF);
     if (currentLevel != null) {//currently playing a level
       if (noclip) {
         text("NOCLIP", 20, 20);
