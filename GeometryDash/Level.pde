@@ -58,10 +58,13 @@ public class Level {
         player.setVelocityY(13.5018);
       } else if (player.gamemode.equals("ship")) {
         if (player.shipHeld()) {
-          player.setVelocityY(player.getVelocityY()-1.5);
+          player.setVelocityY(player.getVelocityY()-1.4);
         }
-        if (player.getVelocityY() <= -10) {
-          player.setVelocityY(-10);
+        if (player.getVelocityY() <= -5) {
+          player.setVelocityY(-5);
+        }
+        if (player.getVelocityY() >= 5) {
+          player.setVelocityY(5);
         }
       }
     }
