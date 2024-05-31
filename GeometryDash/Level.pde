@@ -52,12 +52,14 @@ public class Level {
   }
   
   public void movePlayer() {
-    player.gamemode().updateVelocity();
-    for (int i = 0; i < 10; i++) {
-      player.addY(player.getVelocityY()/10);
-      calculateCollisions();
+    if (!paused) {
+      player.gamemode().updateVelocity();
+      for (int i = 0; i < 10; i++) {
+        player.addY(player.getVelocityY()/10);
+        calculateCollisions();
+      }
+      player.addX(5.193);
     }
-    player.addX(5.193);
   }
   
   public void reset() {

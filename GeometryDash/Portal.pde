@@ -6,6 +6,7 @@ public class Portal extends LevelObject {
     super(x, y, r, imageID);
     if (imageID == 13) {
       portalType = "ship";
+      gravity = 0.5;
     } else if (imageID == 12) {
       portalType = "cube";
       gravity = 0.7555815;
