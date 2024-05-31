@@ -13,7 +13,7 @@ public class Player {
     positionY = y;
     this.velocityY = velocityY;
     rotation = r;
-    sprite = loadImage("sprites/playerIcon1.png");
+    sprite = loadImage("sprites/cubeIcon1.png");
     largeHitbox = new Hitbox(x-15, y-15, x+15, y+15);
     smallHitbox = new Hitbox(x-3, y-3, x+3, y+3);
     this.gamemode = new Gamemode(this, mode);
@@ -76,6 +76,9 @@ public class Player {
       }
     }
   }
+  public void setSprite (PImage newSprite) {
+    sprite = newSprite;
+  }
   public void reset() {
     positionX = PLAYER_OFFSET;
     positionY = height-15;
@@ -85,24 +88,4 @@ public class Player {
     gamemode = new Gamemode(this, "cube");
     alive = true;
   }
-  
-  //public void inputPressed() {
-  //  if (gamemode.equals("cube")) {
-  //    cubeJump();
-  //  } else if (gamemode.equals("ship")) {
-  //    shipHeld = true;
-  //  }
-  //}
-  //public void cubeJump() {
-  //  if (canJump) {
-  //    velocityY = -10.07442;
-  //    canJump = false;
-  //  }
-  //}
-  //public boolean shipHeld() {
-  //  return shipHeld;
-  //}
-  //public void releaseInput() {
-  //  shipHeld = false;
-  //}
 }

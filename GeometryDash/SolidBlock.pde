@@ -11,6 +11,7 @@ public class SolidBlock extends LevelObject {
       if (getHitbox().collidesWith(player.smallHitbox())) {
         player.setAliveState(false);
       }
+      //keeps the player on top of solid blocks (and below when player is a ship)
       double upperIntersection = player.largeHitbox().y2() - getHitbox().y1();
       double lowerIntersection = getHitbox().y2() - player.largeHitbox().y1();
       if (upperIntersection <= 6) {
