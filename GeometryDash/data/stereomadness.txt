@@ -2889,6 +2889,7 @@ SolidBlock,22935,255,0,1
 SolidBlock,22935,285,0,1
 SolidBlock,22935,45,0,1
 SolidBlock,22935,15,0,1
+Portal,22935,149,0,13
 SolidBlock,22935,75,0,1
 SolidBlock,22935,345,0,1
 SolidBlock,22935,525,0,1
@@ -3173,7 +3174,6 @@ DecorationBlock,24015,15,0,5
 DecorationBlock,24015,285,0,5
 DecorationBlock,24045,495,0,5
 DecorationBlock,24045,315,0,5
-Portal,24045,315,90,13
 DecorationBlock,24045,285,0,5
 SolidBlock,24045,435,180,2
 DecorationBlock,24045,465,0,5
@@ -3787,7 +3787,7 @@ SolidBlock,26145,75,0,1
 DecorationBlock,26145,285,0,5
 DecorationBlock,26145,255,0,5
 DecorationBlock,26175,285,0,5
-SolidBlock,26175,375,90,3
+SolidBlock,26175,375,0,3
 DecorationBlock,26175,45,0,5
 SolidBlock,26175,345,90,2
 SolidBlock,26175,75,0,1
