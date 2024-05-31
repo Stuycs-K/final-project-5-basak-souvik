@@ -11,11 +11,16 @@ public class SolidBlock extends LevelObject {
       if (getHitbox().collidesWith(player.smallHitbox())) {
         player.setAliveState(false);
       }
-      double hitboxIntersection = player.largeHitbox().y2() - getHitbox().y1();
-      if (hitboxIntersection <= 6) {
-        player.addY(-hitboxIntersection);
+      double upperIntersection = player.largeHitbox().y2() - getHitbox().y1();
+      double lowerIntersection = getHitbox().y2() - player.largeHitbox().y1();
+      if (upperIntersection <= 6) {
+        player.addY(-upperIntersection);
         player.setVelocityY(0);
         player.gamemode().setCanJump(true);
+      }
+      if (lowerIntersection <= 6 && player.gamemode().getMode().equals("ship")) {
+        player.addY(lowerIntersection);
+        player.setVelocityY(0);
       }
     }
   }

@@ -21,6 +21,9 @@ public class Gamemode {
   public void setCanJump(boolean newVal) {
     canJump = newVal;
   }
+  public String getMode () {
+    return mode;
+  }
   public void setMode (String newMode) {
     mode = newMode;
   }
