@@ -15,7 +15,7 @@ public class SolidBlock extends LevelObject {
       if (hitboxIntersection <= 6) {
         player.addY(-hitboxIntersection);
         player.setVelocityY(0);
-        player.setCanJump(true);
+        player.gamemode().setCanJump(true);
       }
     }
   }

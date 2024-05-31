@@ -15,14 +15,36 @@ public class Gamemode {
     }
   }
   
-  public void move() {
+  public boolean canJump() {
+    return canJump;
+  }
+  public void setCanJump(boolean newVal) {
+    canJump = newVal;
+  }
+  public void setMode (String newMode) {
+    mode = newMode;
+  }
+  public void setGravity(double newVal) {
+    gravity = newVal;
+  }
+  
+  public void updateVelocity() {
     if (player.isAlive() && !paused) {
-      player.addX(5.193);
       player.setVelocityY(player.getVelocityY()+gravity);
       if (mode.equals("cube")) {
-        
+        if (player.getVelocityY() >= 13.5018) {
+          player.setVelocityY(13.5018);
+        }
       } else if (mode.equals("ship")) {
-        
+        if (shipHeld) {
+          player.setVelocityY(player.getVelocityY()-1.1);
+        }
+        if (player.getVelocityY() <= -5) {
+          player.setVelocityY(-5);
+        }
+        if (player.getVelocityY() >= 5) {
+          player.setVelocityY(5);
+        }
       }
     }
   }

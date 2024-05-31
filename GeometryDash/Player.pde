@@ -38,9 +38,6 @@ public class Player {
   public Hitbox smallHitbox() {
     return smallHitbox;
   }
-  public boolean canJump() {
-    return canJump;
-  }
   public Gamemode gamemode() {
     return gamemode;
   }
@@ -49,9 +46,6 @@ public class Player {
   }
   public boolean isAlive() {
     return alive;
-  }
-  public double getGravity() {
-    return gravity;
   }
   public void addX(double x) {
     positionX += x;
@@ -68,7 +62,7 @@ public class Player {
       smallHitbox.addY(FLOOR-positionY);
       positionY = FLOOR;
       velocityY = 0;
-      canJump = true;
+      gamemode.setCanJump(true);
     }
   }
   public void setVelocityY(double vel) {

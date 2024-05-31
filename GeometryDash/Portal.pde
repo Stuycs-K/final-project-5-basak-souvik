@@ -15,8 +15,8 @@ public class Portal extends LevelObject {
   
   public void collideWithPlayer(Player player) {
     if (getHitbox().collidesWith(player.largeHitbox())) {
-      player.setGamemode(portalType);
-      player.setGravity(gravity);
+      player.gamemode().setMode(portalType);
+      player.gamemode().setGravity(gravity);
     }
   }
 }

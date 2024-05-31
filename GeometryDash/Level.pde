@@ -52,27 +52,12 @@ public class Level {
   }
   
   public void movePlayer() {
-    if (!paused && player.isAlive()) {
-      player.setVelocityY(player.getVelocityY()+player.getGravity());
-      if (player.gamemode.equals("cube") && player.getVelocityY() >= 13.5018) {
-        player.setVelocityY(13.5018);
-      } else if (player.gamemode.equals("ship")) {
-        if (player.shipHeld()) {
-          player.setVelocityY(player.getVelocityY()-1.4);
-        }
-        if (player.getVelocityY() <= -5) {
-          player.setVelocityY(-5);
-        }
-        if (player.getVelocityY() >= 5) {
-          player.setVelocityY(5);
-        }
-      }
+    player.gamemode().updateVelocity();
+    for (int i = 0; i < 10; i++) {
+      player.addY(player.getVelocityY()/10);
+      calculateCollisions();
     }
-      for (int i = 0; i < 10; i++) {
-        player.addY(player.getVelocityY()/10);
-        calculateCollisions();
-      }
-      player.addX(5.193);
+    player.addX(5.193);
   }
   
   public void reset() {
