@@ -21,3 +21,7 @@ Added most of the sprites, including the rotated sprites.
 ### 2024-05-29
 
 Finalized the object list for Stereo Madness, and added some pause/noclip features.
+
+### 2024-05-30
+
+Coded jumping for the cube, added a death sound effect, fixed some bugs, and made some functions, such as calculateCollisions, more efficient.
