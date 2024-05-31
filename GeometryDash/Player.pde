@@ -5,13 +5,10 @@ public class Player {
   private Hitbox largeHitbox;
   private Hitbox smallHitbox;
   private boolean alive = true;
-  private String gamemode;
+  private Gamemode gamemode;
   private PImage sprite;
-  private boolean canJump = true;;
-  private double gravity = 0.7555815;
-  private boolean shipHeld = false;
   
-  public Player (double x, double y, double velocityY, int r, String gamemode) {
+  public Player (double x, double y, double velocityY, int r, String mode) {
     positionX = x;
     positionY = y;
     this.velocityY = velocityY;
@@ -19,7 +16,7 @@ public class Player {
     sprite = loadImage("sprites/playerIcon1.png");
     largeHitbox = new Hitbox(x-15, y-15, x+15, y+15);
     smallHitbox = new Hitbox(x-3, y-3, x+3, y+3);
-    this.gamemode = gamemode;
+    this.gamemode = new Gamemode(this, mode);
   }
   
   public void displayPlayer() {
@@ -44,10 +41,10 @@ public class Player {
   public boolean canJump() {
     return canJump;
   }
-  public String gamemode() {
+  public Gamemode gamemode() {
     return gamemode;
   }
-  public void setGamemode (String newMode) {
+  public void setGamemode (Gamemode newMode) {
     gamemode = newMode;
   }
   public boolean isAlive() {
@@ -85,39 +82,33 @@ public class Player {
       }
     }
   }
-  public void setCanJump(boolean newVal) {
-    canJump = newVal;
-  }
-  public void setGravity(double newVal) {
-    gravity = newVal;
-  }
   public void reset() {
     positionX = PLAYER_OFFSET;
     positionY = height-15;
     velocityY = 0;
     largeHitbox = new Hitbox(positionX-15, positionY-15, positionX+15, positionY+15);
     smallHitbox = new Hitbox(positionX-3, positionY-3, positionX+3, positionY+3);
-    gamemode = "cube";
+    gamemode = new Gamemode(this, "cube");
     alive = true;
   }
   
-  public void inputPressed() {
-    if (gamemode.equals("cube")) {
-      cubeJump();
-    } else if (gamemode.equals("ship")) {
-      shipHeld = true;
-    }
-  }
-  public void cubeJump() {
-    if (canJump) {
-      velocityY = -10.07442;
-      canJump = false;
-    }
-  }
-  public boolean shipHeld() {
-    return shipHeld;
-  }
-  public void releaseInput() {
-    shipHeld = false;
-  }
+  //public void inputPressed() {
+  //  if (gamemode.equals("cube")) {
+  //    cubeJump();
+  //  } else if (gamemode.equals("ship")) {
+  //    shipHeld = true;
+  //  }
+  //}
+  //public void cubeJump() {
+  //  if (canJump) {
+  //    velocityY = -10.07442;
+  //    canJump = false;
+  //  }
+  //}
+  //public boolean shipHeld() {
+  //  return shipHeld;
+  //}
+  //public void releaseInput() {
+  //  shipHeld = false;
+  //}
 }

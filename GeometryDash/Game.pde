@@ -30,9 +30,9 @@ public class Game {
     }
   }
   public void playerInput() {
-    player.inputPressed();//pixels/frame
+    player.gamemode().inputPressed();//pixels/frame
   }
   public void playerRelease() {
-    player.releaseInput();
+    player.gamemode().inputReleased();
   }
 }
