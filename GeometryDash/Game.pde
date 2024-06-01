@@ -23,19 +23,35 @@ public class Game {
         text("PAUSED", 20, 40);
       }
       if (!player.isAlive()) {
-        currentLevel.reset();
+        currentLevel.reset(true);
       }
       player.displayPlayer();
       currentLevel.drawMap();
       currentLevel.movePlayer();
     } else {//in menu
       image(title, width/2, 50);
+      textSize(30);
+      text("Press 1 to play Stereo Madness", 50, 120);
+      text("Press 2 to play a challenge level", 50, 170);
+      textSize(12);
     }
   }
   public void playerInput() {
-    player.gamemode().inputPressed();//pixels/frame
+    player.gamemode().inputPressed();
   }
   public void playerRelease() {
     player.gamemode().inputReleased();
+  }
+  public void selectLevel() {
+    if (currentLevel == null) {
+      currentLevel = levels[key - '0'-1];
+    }
+  }
+  public void exitLevel() {
+    if (paused) {
+      currentLevel.reset(false);
+      currentLevel = null;
+      paused = false;
+    }
   }
 }

@@ -62,10 +62,12 @@ public class Level {
     }
   }
   
-  public void reset() {
-    try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {}
+  public void reset(boolean delay) {
+    if (delay) {
+      try {
+        Thread.sleep(1000);
+      } catch (InterruptedException e) {}
+    }
     player.reset();
     drawStartIndex = 0;
     collisionStartIndex = 0;

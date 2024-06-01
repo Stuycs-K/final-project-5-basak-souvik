@@ -29,6 +29,12 @@ void keyPressed () {
   if ((key == ' ' || key == CODED && keyCode == UP) && !paused) {
     game.playerInput();
   }
+  if (key == 'e') {
+    game.exitLevel();
+  }
+  if (key >= '1' && key <= '2') {
+    game.selectLevel();
+  }
 }
 
 void keyReleased() {
