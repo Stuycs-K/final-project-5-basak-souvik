@@ -25,3 +25,7 @@ Finalized the object list for Stereo Madness, and added some pause/noclip featur
 ### 2024-05-30
 
 Coded jumping for the cube, added a death sound effect, fixed some bugs, and made some functions, such as calculateCollisions, more efficient.
+
+### 2024-05-31
+
+Shifted around some code: the code relating to updating the player's velocity is in a new class called Gamemode. Also started and finished coding the physics for the ship. Added icons for the cube and the ship as well.
