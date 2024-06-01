@@ -5,9 +5,10 @@ public class Game {
   
   public Game () {
     player = new Player(PLAYER_OFFSET,height-15,0,0, "cube");
-    levels = new Level[1];
+    levels = new Level[2];
     levels[0] = new Level("stereomadness", player);
-    currentLevel = levels[0];
+    levels[1] = new Level("minichallenge", player);
+    currentLevel = levels[1];
   }
   
   public void playFrame() {

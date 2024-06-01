@@ -4,7 +4,7 @@ public class Hazard extends LevelObject {
     if (imageID == 8) {
       setHitbox(new Hitbox(x-3,y-4,x+3,y+4));
     } else if (imageID == 39) {
-      setHitbox(new Hitbox(x-3,y-3,x+3,y+3));
+      setHitbox(new Hitbox(x-2,y-2,x+2,y+2));
     }  else {
       setHitbox(new Hitbox(0,0,0,0));
     }

@@ -87,5 +87,6 @@ public class Player {
     smallHitbox = new Hitbox(positionX-3, positionY-3, positionX+3, positionY+3);
     gamemode = new Gamemode(this, "cube");
     alive = true;
+    sprite = loadImage("sprites/cubeIcon1.png");
   }
 }
