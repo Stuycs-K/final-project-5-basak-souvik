@@ -3,12 +3,16 @@ public class Level {
   private LevelObject objectList[];
   private int drawStartIndex = 0;
   private int collisionStartIndex = 0;
+  private SoundFile song;
   
   public Level (String levelName, Player player) {
     this.player = player;
     objectList = readLevelFile(levelName+".txt");
+    song = new SoundFile(GeometryDash.this, "data/"+levelName+".mp3");
   }
-  
+  public SoundFile getSong() {
+    return song;
+  }
   public void drawMap() {
     for (int i = drawStartIndex; i < objectList.length; i++) {
       if (objectList[i].getX() < player.getX()-PLAYER_OFFSET) {
@@ -62,8 +66,9 @@ public class Level {
     }
   }
   
-  public void reset(boolean delay) {
-    if (delay) {
+  public void reset(boolean respawn) {
+    song.cue(0);
+    if (respawn) {
       try {
         Thread.sleep(1000);
       } catch (InterruptedException e) {}
@@ -71,5 +76,15 @@ public class Level {
     player.reset();
     drawStartIndex = 0;
     collisionStartIndex = 0;
+    if (respawn) {
+      song.play();//when respawn is false, player is exiting the level
+    }
+  }
+  public void pause () {
+    if (paused) {
+      song.pause();
+    } else {
+      song.play();
+    }
   }
 }

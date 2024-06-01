@@ -12,7 +12,9 @@ public class Game {
     //currentLevel = levels[0];
     title = loadImage("sprites/title.png");
   }
-  
+  public Level getCurrentLevel() {
+    return currentLevel;
+  }
   public void playFrame() {
     background(#283EFF);
     if (currentLevel != null) {//currently playing a level
@@ -45,10 +47,8 @@ public class Game {
   public void selectLevel() {
     if (currentLevel == null) {
       currentLevel = levels[key - '0'-1];
-    }
-    if (key == '1') {
-      currentSong = StereoMadness;
-      currentSong.play();
+      currentLevel.getSong().cue(0);
+      currentLevel.getSong().play();
     }
   }
   public void exitLevel() {

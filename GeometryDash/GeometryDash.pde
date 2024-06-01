@@ -1,7 +1,5 @@
 import processing.sound.*;
 SoundFile deathEffect;
-SoundFile StereoMadness;
-SoundFile currentSong;
 
 int PLAYER_OFFSET = 225;
 Game game;
@@ -15,7 +13,6 @@ void setup() {
   FLOOR = height-15;
   game = new Game();
   deathEffect = new SoundFile(this, "deathEffect.mp3");
-  StereoMadness = new SoundFile(this, "StereoMadness.mp3");
 }
 
 void draw() {
@@ -25,11 +22,7 @@ void draw() {
 void keyPressed () {
   if (key == 'p') {
     paused = !paused;
-    if (paused) {
-      currentSong.pause();
-    } else {
-      currentSong.play();
-    }
+    game.getCurrentLevel().pause();
   }
   if (key == 'n') {
     noclip = !noclip;
