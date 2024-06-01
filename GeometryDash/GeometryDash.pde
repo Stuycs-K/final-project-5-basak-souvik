@@ -26,13 +26,13 @@ void keyPressed () {
   if (key == 'n') {
     noclip = !noclip;
   }
-  if (key == ' ' && !paused) {
+  if ((key == ' ' || key == CODED && keyCode == UP) && !paused) {
     game.playerInput();
   }
 }
 
 void keyReleased() {
-  if (key == ' ') {
+  if (key == ' ' || key == CODED && keyCode == UP) {
     game.playerRelease();
   }
 }

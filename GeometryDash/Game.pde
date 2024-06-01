@@ -2,13 +2,15 @@ public class Game {
   private Player player;
   private Level levels[];
   private Level currentLevel;
+  private PImage title;
   
   public Game () {
     player = new Player(PLAYER_OFFSET,height-15,0,0, "cube");
     levels = new Level[2];
     levels[0] = new Level("stereomadness", player);
     levels[1] = new Level("minichallenge", player);
-    currentLevel = levels[1];
+    //currentLevel = levels[0];
+    title = loadImage("sprites/title.png");
   }
   
   public void playFrame() {
@@ -27,7 +29,7 @@ public class Game {
       currentLevel.drawMap();
       currentLevel.movePlayer();
     } else {//in menu
-      
+      image(title, width/2, 50);
     }
   }
   public void playerInput() {
