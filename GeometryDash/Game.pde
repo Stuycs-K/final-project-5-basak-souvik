@@ -20,7 +20,7 @@ public class Game {
         text("NOCLIP", 20, 20);
       }
       if (paused) {
-        text("PAUSED", 20, 40);
+        text("PAUSED. Press e to exit to main menu", 20, 40);
       }
       if (!player.isAlive()) {
         currentLevel.reset(true);
@@ -31,8 +31,8 @@ public class Game {
     } else {//in menu
       image(title, width/2, 50);
       textSize(30);
-      text("Press 1 to play Stereo Madness", 50, 120);
-      text("Press 2 to play a challenge level", 50, 170);
+      text("Press 1 to play Stereo Madness", 60, 120);
+      text("Press 2 to play a challenge level", 60, 170);
       textSize(12);
     }
   }
@@ -45,6 +45,10 @@ public class Game {
   public void selectLevel() {
     if (currentLevel == null) {
       currentLevel = levels[key - '0'-1];
+    }
+    if (key == '1') {
+      currentSong = StereoMadness;
+      currentSong.play();
     }
   }
   public void exitLevel() {
