@@ -55,7 +55,7 @@ public class Level {
     return output;
   }
   
-  public void movePlayer() {
+  public boolean movePlayer() {
     if (!paused) {
       player.gamemode().updateVelocity();
       for (int i = 0; i < 10; i++) {
@@ -64,6 +64,7 @@ public class Level {
       }
       player.addX(5.193);
     }
+    return player.getX() > objectList[objectList.length-1].getX()+210;
   }
   
   public void reset(boolean respawn) {

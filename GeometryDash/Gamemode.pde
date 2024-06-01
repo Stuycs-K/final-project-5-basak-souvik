@@ -40,7 +40,7 @@ public class Gamemode {
         }
       } else if (mode.equals("ship")) {
         if (shipHeld) {
-          player.setVelocityY(player.getVelocityY()-1.2);
+          player.setVelocityY(player.getVelocityY()-1.3);
         }
         if (player.getVelocityY() <= -5) {
           player.setVelocityY(-5);

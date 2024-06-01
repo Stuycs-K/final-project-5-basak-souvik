@@ -29,7 +29,9 @@ public class Game {
       }
       player.displayPlayer();
       currentLevel.drawMap();
-      currentLevel.movePlayer();
+      if (currentLevel.movePlayer()) {
+        exitLevel();
+      }
     } else {//in menu
       image(title, width/2, 50);
       textSize(30);
@@ -52,10 +54,8 @@ public class Game {
     }
   }
   public void exitLevel() {
-    if (paused) {
-      currentLevel.reset(false);
-      currentLevel = null;
-      paused = false;
-    }
+    currentLevel.reset(false);
+    currentLevel = null;
+    paused = false;
   }
 }
