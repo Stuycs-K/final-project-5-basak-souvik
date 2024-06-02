@@ -17,7 +17,6 @@ public class SolidBlock extends LevelObject {
       if (upperIntersection <= 6) {
         player.addY(-upperIntersection);
         player.setVelocityY(0);
-        player.gamemode().setCanJump(true);
       }
       if (lowerIntersection <= 6 && player.gamemode().getMode().equals("ship")) {
         player.addY(lowerIntersection);

@@ -61,6 +61,11 @@ public class Level {
       for (int i = 0; i < 10; i++) {
         player.addY(player.getVelocityY()/10);
         calculateCollisions();
+        if (player.getVelocityY() == 0) {
+          player.gamemode().setCanJump(true);
+        } else {
+          player.gamemode().setCanJump(false);
+        }
       }
       player.addX(5.193);
     }

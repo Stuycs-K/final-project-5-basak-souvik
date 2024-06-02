@@ -64,7 +64,6 @@ public class Gamemode {
   public void cubeJump() {
     if (canJump) {
       player.setVelocityY(-10.07442);
-      canJump = false;
     }
   }
 }
