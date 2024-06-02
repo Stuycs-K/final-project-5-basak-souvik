@@ -9,7 +9,6 @@ public class Game {
     levels = new Level[2];
     levels[0] = new Level("stereomadness", player);
     levels[1] = new Level("minichallenge", player);
-    //currentLevel = levels[0];
     title = loadImage("sprites/title.png");
   }
   public Level getCurrentLevel() {
@@ -37,6 +36,7 @@ public class Game {
       textSize(30);
       text("Press 1 to play Stereo Madness", 60, 120);
       text("Press 2 to play a challenge level", 60, 170);
+      text("Controls:\n   Space or up arrow to jump/fly\n   P to pause\n   N for noclip", 60, 230);
       textSize(12);
     }
   }

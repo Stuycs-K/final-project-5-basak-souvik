@@ -22,7 +22,9 @@ void draw() {
 void keyPressed () {
   if (key == 'p') {
     paused = !paused;
-    game.getCurrentLevel().pause();
+    if (game.getCurrentLevel() != null) {
+      game.getCurrentLevel().pause();
+    }
   }
   if (key == 'n') {
     noclip = !noclip;
