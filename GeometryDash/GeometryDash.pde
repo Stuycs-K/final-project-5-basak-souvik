@@ -8,6 +8,7 @@ boolean noclip = false;
 double FLOOR;
 
 void setup() {
+  Sound.volume(0.7);
   imageMode(CENTER);
   size(1000,500);
   FLOOR = height-15;
