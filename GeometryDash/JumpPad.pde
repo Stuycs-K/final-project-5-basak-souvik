@@ -5,5 +5,9 @@ public class JumpPad extends LevelObject {
     int spriteHeight = getSprite().height;
     setHitbox(new Hitbox(x-spriteWidth/2, y-spriteHeight/2, x+spriteWidth/2, y+spriteHeight/2));
   }
-  public void collideWithPlayer(Player player){}
+  public void collideWithPlayer(Player player){
+    if (getHitbox().collidesWith(player.largeHitbox())) {
+      player.setVelocityY(-14.38461);
+    }
+  }
 }

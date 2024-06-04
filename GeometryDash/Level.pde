@@ -50,6 +50,8 @@ public class Level {
         output[i] = new SolidBlock(Double.parseDouble(line[1]),height-Double.parseDouble(line[2]),Integer.parseInt(line[3]),Integer.parseInt(line[4]));
       } else if (line[0].equals("Portal")) {
         output[i] = new Portal(Double.parseDouble(line[1]),height-Double.parseDouble(line[2]),Integer.parseInt(line[3]),Integer.parseInt(line[4]));
+      } else if (line[0].equals("JumpPad")) {
+        output[i] = new JumpPad(Double.parseDouble(line[1]),height-Double.parseDouble(line[2]),Integer.parseInt(line[3]),Integer.parseInt(line[4]));
       }
     }
     return output;
