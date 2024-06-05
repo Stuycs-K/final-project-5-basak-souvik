@@ -33,7 +33,7 @@ void keyPressed () {
   if (key == 'e' && paused) {
     game.exitLevel();
   }
-  if (key >= '1' && key <= '2') {
+  if (key >= '1' && key <= '3') {
     game.selectLevel();
   }
 }

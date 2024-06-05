@@ -7,8 +7,10 @@ public class Level {
   
   public Level (String levelName, Player player) {
     this.player = player;
-    objectList = readLevelFile(levelName+".txt");
-    song = new SoundFile(GeometryDash.this, "data/"+levelName+".mp3");
+    try {
+      objectList = readLevelFile(levelName+".txt");
+      song = new SoundFile(GeometryDash.this, "data/"+levelName+".mp3");
+    } catch (Exception e) {}
   }
   public SoundFile getSong() {
     return song;

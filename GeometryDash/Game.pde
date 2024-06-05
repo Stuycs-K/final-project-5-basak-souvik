@@ -6,10 +6,10 @@ public class Game {
   
   public Game () {
     player = new Player(PLAYER_OFFSET,height-15,0,0, "cube");
-    levels = new Level[2];
+    levels = new Level[3];
     levels[0] = new Level("stereomadness", player);
     levels[1] = new Level("minichallenge", player);
-    //currentLevel = levels[0];
+    levels[2] = new Level("backontrack", player);
     title = loadImage("sprites/title.png");
   }
   public Level getCurrentLevel() {
