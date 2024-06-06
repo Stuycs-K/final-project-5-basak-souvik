@@ -2,7 +2,7 @@ public class Gamemode {
   private Player player;
   private String mode;
   private boolean canJump = true;
-  private boolean shipHeld = false;
+  private boolean inputHeld = false;
   private double gravity;
   
   public Gamemode (Player player, String mode) {
@@ -33,13 +33,16 @@ public class Gamemode {
   
   public void updateVelocity() {
     if (player.isAlive() && !paused) {
-      player.setVelocityY(player.getVelocityY()+gravity);
       if (mode.equals("cube")) {
+        if (inputHeld && canJump) {
+          player.setVelocityY(-10.07442);
+          canJump = false;
+        }
         if (player.getVelocityY() >= 13.5018) {
           player.setVelocityY(13.5018);
         }
       } else if (mode.equals("ship")) {
-        if (shipHeld) {
+        if (inputHeld) {
           player.setVelocityY(player.getVelocityY()-1.3);
         }
         if (player.getVelocityY() <= -5) {
@@ -49,21 +52,16 @@ public class Gamemode {
           player.setVelocityY(5);
         }
       }
+      player.setVelocityY(player.getVelocityY()+gravity);
     }
   }
   public void inputPressed() {
-    if (mode.equals("cube")) {
-      cubeJump();
-    } else if (mode.equals("ship")) {
-      shipHeld = true;
-    }
+    inputHeld = true;
   }
   public void inputReleased() {
-    shipHeld = false;
+    inputHeld = false;
   }
-  public void cubeJump() {
-    if (canJump) {
-      player.setVelocityY(-10.07442);
-    }
+  public boolean getInputHeld () {
+    return inputHeld;
   }
 }

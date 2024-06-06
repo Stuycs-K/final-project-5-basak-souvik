@@ -62,7 +62,6 @@ public class Player {
       smallHitbox.addY(FLOOR-positionY);
       positionY = FLOOR;
       velocityY = 0;
-      gamemode.setCanJump(true);
     }
   }
   public void setVelocityY(double vel) {
