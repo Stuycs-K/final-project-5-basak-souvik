@@ -29,3 +29,19 @@ Coded jumping for the cube, added a death sound effect, fixed some bugs, and mad
 ### 2024-05-31
 
 Shifted around some code: the code relating to updating the player's velocity is in a new class called Gamemode. Also started and finished coding the physics for the ship. Added icons for the cube and the ship as well.
+
+### 2024-06-01
+
+Fixed bugs with songs and added a challenge level.
+
+### 2024-06-02
+
+Fixed a bug with the player being able to jump in the air. The canJump boolean is now false whenever the player's velocity isn't 0.
+
+### 2024-06-03
+
+Wrote the JumpPad class, which just sets the player velocity to a specific value when the player touches the jump pad.
+
+### 2024-06-05
+
+Created the text file for Back on track, will need to update later.
