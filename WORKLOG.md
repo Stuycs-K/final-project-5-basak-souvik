@@ -45,3 +45,7 @@ Wrote the JumpPad class, which just sets the player velocity to a specific value
 ### 2024-06-05
 
 Created the text file for Back on track, will need to update later.
+
+### 2024-06-06
+
+Updated the Back on Track level file and allowed for input buffering.
