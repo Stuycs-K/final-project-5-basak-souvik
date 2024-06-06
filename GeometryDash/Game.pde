@@ -8,8 +8,8 @@ public class Game {
     player = new Player(PLAYER_OFFSET,height-15,0,0, "cube");
     levels = new Level[3];
     levels[0] = new Level("stereomadness", player);
-    levels[1] = new Level("minichallenge", player);
-    levels[2] = new Level("backontrack", player);
+    levels[1] = new Level("backontrack", player);
+    levels[2] = new Level("minichallenge", player);
     title = loadImage("sprites/title.png");
   }
   public Level getCurrentLevel() {
@@ -36,7 +36,8 @@ public class Game {
       image(title, width/2, 50);
       textSize(30);
       text("Press 1 to play Stereo Madness", 60, 120);
-      text("Press 2 to play a challenge level", 60, 170);
+      text("Press 2 to play Back on Track", 60, 170);
+      text("Press 3 to play a challenge level", 60, 220);
       textSize(12);
     }
   }

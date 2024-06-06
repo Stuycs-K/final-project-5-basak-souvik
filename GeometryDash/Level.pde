@@ -73,7 +73,7 @@ public class Level {
       }
       player.addX(5.193);
     }
-    return player.getX() > objectList[objectList.length-1].getX()+210;
+    return player.getX() > objectList[objectList.length-1].getX()+300;
   }
   
   public void reset(boolean respawn) {
