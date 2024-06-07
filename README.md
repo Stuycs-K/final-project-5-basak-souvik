@@ -2,5 +2,16 @@
 # APCS2 Final Project
 THIS DOCUMENT IS REQUIRED
 ## Group Info
+Group Members: Souvik Basak
+Group Name: Deometry Gash
 ## Overview
+
 ## Instructions
+The Sound library is the only library necessary to run this project.
+To run, just run it on Processing.
+
+Controls:
+For the cube, press space or the up arrow to jump.
+For the ship, hold space or the up arrow to fly.
+Press p to pause, and e to exit the level while paused.
+Press n to enable noclip.
