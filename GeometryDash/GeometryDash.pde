@@ -11,12 +11,14 @@ void setup() {
   imageMode(CENTER);
   size(1000,500);
   FLOOR = height-15;
-  game = new Game();
+  PImage loadingScreen = loadImage("sprites/loadingScreen.jpeg");
+  image(loadingScreen, width/2, height/2);
+  //game = new Game();
   deathEffect = new SoundFile(this, "deathEffect.mp3");
 }
 
 void draw() {
-  game.playFrame();
+  //game.playFrame();
 }
 
 void keyPressed () {

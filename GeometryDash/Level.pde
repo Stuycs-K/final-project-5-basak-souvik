@@ -62,8 +62,8 @@ public class Level {
   public boolean movePlayer() {
     if (!paused) {
       player.gamemode().updateVelocity();
-      for (int i = 0; i < 10; i++) {
-        player.addY(player.getVelocityY()/10);
+      for (int i = 0; i < 5; i++) {
+        player.addY(player.getVelocityY()/5);
         calculateCollisions();
         if (player.getVelocityY() == 0) {
           player.gamemode().setCanJump(true);
