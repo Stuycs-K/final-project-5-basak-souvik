@@ -11,7 +11,7 @@ double FLOOR;
 void setup() {
   imageMode(CENTER);
   size(1000,500);
-  loadingScreen = loadImage("sprites/loadingScreen.jpeg");
+  loadingScreen = loadImage("sprites/loadingScreen.png");
   FLOOR = height-15;
   deathEffect = new SoundFile(this, "deathEffect.mp3");
 }
