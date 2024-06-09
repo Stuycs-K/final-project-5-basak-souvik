@@ -3,6 +3,7 @@ SoundFile deathEffect;
 
 int PLAYER_OFFSET = 225;
 Game game;
+PImage loadingScreen;
 boolean paused = false;
 boolean noclip = false;
 double FLOOR;
@@ -10,15 +11,20 @@ double FLOOR;
 void setup() {
   imageMode(CENTER);
   size(1000,500);
-  PImage loadingScreen = loadImage("sprites/loadingScreen.jpeg");
-  image(loadingScreen, width/2, height/2);
+  loadingScreen = loadImage("sprites/loadingScreen.jpeg");
   FLOOR = height-15;
-  game = new Game();
   deathEffect = new SoundFile(this, "deathEffect.mp3");
 }
 
 void draw() {
-  game.playFrame();
+  if (game == null) {
+    image(loadingScreen, width/2, height/2);
+    if (frameCount > 1) {
+      game = new Game();
+    }
+  } else {
+    game.playFrame();
+  }
 }
 
 void keyPressed () {
