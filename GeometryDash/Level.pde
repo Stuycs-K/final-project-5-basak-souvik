@@ -4,16 +4,21 @@ public class Level {
   private int drawStartIndex = 0;
   private int collisionStartIndex = 0;
   private SoundFile song;
+  private PImage background;
   
   public Level (String levelName, Player player) {
     this.player = player;
     try {
       objectList = readLevelFile(levelName+".txt");
       song = new SoundFile(GeometryDash.this, "data/"+levelName+".mp3");
+      background = loadImage("sprites/"+levelName+"bg.png");
     } catch (Exception e) {}
   }
   public SoundFile getSong() {
     return song;
+  }
+  public PImage getBackground() {
+    return background;
   }
   public void drawMap() {
     for (int i = drawStartIndex; i < objectList.length; i++) {

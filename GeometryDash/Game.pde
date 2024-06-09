@@ -3,6 +3,11 @@ public class Game {
   private Level levels[];
   private Level currentLevel;
   private PImage title;
+  private PImage background;
+  private PImage levelIcon1;
+  private PImage levelIcon2;
+  private PImage levelIcon3;
+  private PImage instruction;
   
   public Game () {
     player = new Player(PLAYER_OFFSET,height-15,0,0, "cube");
@@ -11,13 +16,18 @@ public class Game {
     levels[1] = new Level("backontrack", player);
     levels[2] = new Level("minichallenge", player);
     title = loadImage("sprites/title.png");
+    background = loadImage("sprites/menuBackground.png");
+    levelIcon1 = loadImage("sprites/levelIcon1.png");
+    levelIcon2 = loadImage("sprites/levelIcon2.png");
+    levelIcon3 = loadImage("sprites/levelIcon3.png");
+    instruction = loadImage("sprites/instructions.png");
   }
   public Level getCurrentLevel() {
     return currentLevel;
   }
   public void playFrame() {
-    background(#283EFF);
     if (currentLevel != null) {//currently playing a level
+      image(currentLevel.getBackground(), width/2, height/2);
       if (noclip) {
         text("NOCLIP", 20, 20);
       }
@@ -33,12 +43,12 @@ public class Game {
         exitLevel();
       }
     } else {//in menu
+      image(background, width/2, height/2);
       image(title, width/2, 50);
-      textSize(30);
-      text("Press 1 to play Stereo Madness", 60, 120);
-      text("Press 2 to play Back on Track", 60, 170);
-      text("Press 3 to play a challenge level", 60, 220);
-      textSize(12);
+      image(levelIcon1, 600, 160);
+      image(levelIcon2, 600, 295);
+      image(levelIcon3, 600, 430);
+      image(instruction, 165, 160);
     }
   }
   public void playerInput() {
