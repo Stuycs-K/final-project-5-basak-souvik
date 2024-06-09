@@ -23,4 +23,5 @@ Press p to pause, and e to exit the level while paused.
 
 Press n to enable noclip.
 
-Bug: Sometimes, the collision between the player and a jump pad doesn't register. Just use noclip when playing in case this happens.
+## Bugs
+Sometimes, the collision between the player and a jump pad doesn't register. Just use noclip when playing in case this happens.
