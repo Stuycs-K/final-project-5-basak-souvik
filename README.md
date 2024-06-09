@@ -3,6 +3,7 @@
 THIS DOCUMENT IS REQUIRED
 ## Group Info
 Group Members: Souvik Basak
+
 Group Name: Deometry Gash
 ## Overview
 
@@ -11,7 +12,12 @@ The Sound library is the only library necessary to run this project.
 To run, just run it on Processing.
 
 Controls:
+To select a level while in the menus, press 1, 2, or 3.
+
 For the cube, press space or the up arrow to jump.
+
 For the ship, hold space or the up arrow to fly.
+
 Press p to pause, and e to exit the level while paused.
+
 Press n to enable noclip.
