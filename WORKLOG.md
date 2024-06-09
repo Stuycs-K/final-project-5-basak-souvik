@@ -49,3 +49,11 @@ Created the text file for Back on track, will need to update later.
 ### 2024-06-06
 
 Updated the Back on Track level file and allowed for input buffering.
+
+### 2024-06-07
+
+Tried to implement a loading screen while the Game class initializes, but failed.
+
+### 2024-06-09
+
+Fixed the error with the loading screen, and made menus and background more clean.
