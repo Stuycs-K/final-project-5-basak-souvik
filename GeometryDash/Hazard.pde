@@ -5,8 +5,10 @@ public class Hazard extends LevelObject {
       setHitbox(new Hitbox(x-3,y-4,x+3,y+4));
     } else if (imageID == 39) {
       setHitbox(new Hitbox(x-2,y-2,x+2,y+2));
-    }  else {
-      setHitbox(new Hitbox(0,0,0,0));
+    } else {
+      int spriteWidth = getSprite().width;
+      int spriteHeight = getSprite().height;
+      setHitbox(new Hitbox(x-spriteWidth/2, y-spriteHeight/2, x+spriteWidth/2, y+spriteHeight/2));
     }
   }
   
